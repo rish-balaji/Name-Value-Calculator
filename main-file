@@ -1,7 +1,8 @@
-user_name = input("Enter your name: ")
 start_value = int(input("Enter a starting value: "))
 increment_value = int(input("Enter a value for incrementing: "))
+user_name = input("Enter your name: ")
 letter_values = {}
+names_list = {}
 
 def alphabet():
     for i in range(26):
@@ -23,3 +24,11 @@ alphabet()
 
 name_value = calculate_name_value(user_name)
 print(f"Total value for the name '{user_name}': {name_value}")
+
+# Add the name and its value to the dictionary
+names_list[user_name] = name_value
+
+# Optional: print the dictionary
+print("\nAll calculated name values:")
+for name, value in names_list.items():
+    print(f"{name}: {value}")
