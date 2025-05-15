@@ -1,0 +1,25 @@
+user_name = input("Enter your name: ")
+start_value = int(input("Enter a starting value: "))
+increment_value = int(input("Enter a value for incrementing: "))
+letter_values = {}
+
+def alphabet():
+    for i in range(26):
+        letter = chr(ord('a') + i)
+        letter_values[letter] = start_value + (i * increment_value)
+
+    for letter, value in letter_values.items():
+        print(f"{letter}: {value}")
+
+def calculate_name_value(name):
+    name = name.lower()
+    total = 0
+    for letter in name:
+        if letter in letter_values:
+            total += letter_values[letter]
+    return total
+
+alphabet()
+
+name_value = calculate_name_value(user_name)
+print(f"Total value for the name '{user_name}': {name_value}")
