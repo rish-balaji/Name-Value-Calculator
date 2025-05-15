@@ -44,3 +44,12 @@ if sorted_check.lower() == 'y':
         print(sorted_user_name)
 else:
     print(names_list)
+
+search_check = input("Would you like to search for a name by score? y for yes, n for no: ")
+if search_check.lower() == 'y':
+    target_score = int(input("Enter the score you want to search for: "))
+    matching_names = [name for name, score in names_list.items() if score == target_score]
+    if matching_names:
+        print(f"Name(s) with score {target_score}: {', '.join(matching_names)}")
+    else:
+        print(f"No names found with the score {target_score}.")
